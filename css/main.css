@@ -22,3 +22,15 @@ header {
 h1, h2 {
 	color: #000;
 }
+
+nav {
+	background-color: #00b200;
+}
+
+nav a, nav a:visited {
+	color: #fff;
+}
+
+nav a.currentPage, nav a:hover {
+	color: #32673f;
+}
