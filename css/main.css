@@ -34,3 +34,8 @@ nav a, nav a:visited {
 nav a.currentPage, nav a:hover {
 	color: #32673f;
 }
+
+body {
+	background-color: #000;
+	color: #32cd32;
+}
