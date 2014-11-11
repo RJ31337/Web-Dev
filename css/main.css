@@ -1,41 +1,101 @@
-a {
-	text-decoration: none;
-	color: #32cd32;
-}
+/*****************************
+CSS Stylesheet for Portfolio
+by Rev Dave Wakely
+*****************************/
 
+/* Wrapper section */
 #wrapper {
 	max-width: 940px;
 	margin: 0 auto;
 	padding: 0 5%;
 }
 
+/* Hyperlinks across the page */
+a {
+	text-decoration: none;
+	color: #32cd32;
+}
+
+body {
+	font-family: 'Oswald', sans-serif;
+}
+
+/*****************************
+           HEADING
+*****************************/
 #logo {
 	text-align: center;
 	margin 0;
 }
 
+h1 {
+	font-family: 'Lobster', cursive;
+	margin: 15px 0;
+	font-size: 1.75em;
+	font-weight: normal;
+	line-height: 0.8em;
+}
+
+h2 {
+	font-family: 'Indie Flower', cursive;
+	font-size: 0.75em;
+	margin: -5px 0 0;
+	font-weight: normal;
+}
+
+/*****************************
+        NAVIGATION
+*****************************/
+
+nav {
+	text-align: center;
+	padding: 10px 0;
+	margin: 20px 0 0;
+}
+
+/*****************************
+           FOOTER
+*****************************/
+
+footer {
+	font-size: 0.75em;
+	text-align: center;
+	padding-top: 50px;
+	color: #ccc;
+}
+
+/*****************************
+           COLOURS
+*****************************/
+
+/* Site Body */
+body {
+	background-color: #000;
+	color: #32cd32;
+}
+
+/* Lime Green Header Background*/
 header {
 	background: #32cd32;
 	border-color: #00b200;
 }
 
-h1, h2 {
-	color: #000;
-}
-
+/* Nav Background on Mobile */
 nav {
 	background-color: #00b200;
 }
 
+/* Logo Text */
+h1, h2 {
+	color: #000;
+}
+
+/* Visited Nav Link */
 nav a, nav a:visited {
 	color: #fff;
 }
 
+/* Current Page's Link */
 nav a.currentPage, nav a:hover {
 	color: #32673f;
-}
-
-body {
-	background-color: #000;
-	color: #32cd32;
 }
