@@ -30,7 +30,8 @@ body {
 
 h1 {
 	font-family: 'Lobster', cursive;
-	margin: 25px 0;
+	margin: 15px 0;
+	padding: 5px;
 	font-size: 1.75em;
 	font-weight: normal;
 	line-height: 0.8em;
