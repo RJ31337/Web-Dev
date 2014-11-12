@@ -30,9 +30,9 @@ var title = $('#photo-title'),
     gallery_id=gallery;
 
 // album info
-$.getJSON('http://graph.facebook.com/' + gallery_id + '?callback=?', function(json, status, xhr) {
-  title.html('<a href="' + json.link + '">' + json.name + '</a> from ' + json.from.name);
-});
+// $.getJSON('http://graph.facebook.com/' + gallery_id + '?callback=?', function(json, status, xhr) {
+//  title.html('<a href="' + json.link + '">' + json.name + '</a> from ' + json.from.name);
+// });
 
 // images
 $.getJSON('http://graph.facebook.com/' + gallery_id + '/photos/?limit=1000&callback=?', function(json, status, xhr) {
