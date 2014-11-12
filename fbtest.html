@@ -18,43 +18,32 @@ float: right;
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>test</title>
 <script type="text/javascript">
-$(document).ready(function() {
-$("#fb-photo-gallery").fbphotogallery('497225217046134');
-});
-(function($){  
-$.fn.fbphotogallery= function (gallery){
-(this).html('<h2 id=\"photo-title\"></h2><div style=\"width: 952px; height: 360px;\"><div class=\"float-menu-css\" id=\"float-menu\"><center><div id=\"photo-thumbs\"></div></center></div><div id=\"photo-viewer-cont\" style=\"float: right; width:600px; margin-left:auto; margin-right:auto;\"><center><img id=\"photo-viewer\" src=\"http://i42.tinypic.com/nwdhc8.gif\"></center></div></div>');
-var title = $('#photo-title'),
-    viewer = $('#photo-viewer'),
-    thumbs = $('#photo-thumbs')
-    gallery_id=gallery;
+    function getthumbs(gallery_id) {
+        viewer = $('#viewer'), thumbs = $('#thumbs');
+        var hist = [];
+        var rnd = 0;
 
-// album info
-// $.getJSON('http://graph.facebook.com/' + gallery_id + '?callback=?', function(json, status, xhr) {
-//  title.html('<a href="' + json.link + '">' + json.name + '</a> from ' + json.from.name);
-// });
+        $.getJSON('//graph.facebook.com/' + gallery_id + '/photos?callback=?', function (json, status, xhr) {
+            var imgs = json.data;
+            $('#thumbs img').remove();
 
-// images
-$.getJSON('http://graph.facebook.com/' + gallery_id + '/photos/?limit=1000&callback=?', function(json, status, xhr) {
-  var imgs = json.data;
+            for (i = 0; i < 12; i++) {
+                rnd = Math.floor((Math.random() * imgs.length - 1) + 1);
 
-  viewer.attr('src', imgs[0].source)
-  viewer.attr('alt', imgs[0].name)
+                $('<img src="' + imgs[rnd].images[8].source + '">').appendTo(thumbs).fancybox({
+                    href: imgs[rnd].images[3].source
+                }); 
+            }
 
-  for (var i = 0, l = imgs.length - 1; i < l; i++) {
-    $('<img src="' + imgs[i].picture + '" alt="' + imgs[i].name + '" data-fullsize="' + imgs[i].source + '">').appendTo(thumbs);
-  }
-  $("#float-menu").removeClass("float-menu-css").addClass("float-menu-css");
-  $('img', thumbs).bind('click', function(e) {
-    e.preventDefault();
-    $("#photo-viewer-cont").html('<center><img id=\"photo-viewer\" src=\"http://i42.tinypic.com/nwdhc8.gif\"></center>');
-    var viewer = $('#photo-viewer');
-    viewer.attr('src', $(this).attr('data-fullsize'));
-    viewer.attr('alt', $(this).attr('alt'));
-  });
-});
-};
-})(jQuery);
+        });
+    }
+    getthumbs('497225217046134');
+
+    $(document).ready(function () {
+        setInterval(function () {
+            getthumbs('497225217046134');
+        }, 20000);
+    });
 </script></head>
 
 <body>
