@@ -1,12 +1,3 @@
-/**
- * Galleria v 1.4.2 2014-08-07
- * http://galleria.io
- *
- * Licensed under the MIT license
- * https://raw.github.com/aino/galleria/master/LICENSE
- *
- */
-
 (function( $, window, Galleria, undef ) {
 
 /*global jQuery, navigator, Image, module, define */
