@@ -24,6 +24,10 @@ img {
 	max-width: 100%;
 }
 
+h3 {
+	margin: 0 0 1em 0;
+}
+
 /*****************************
            HEADING
 *****************************/
@@ -109,7 +113,7 @@ footer {
 
 #gallery li {
 	float : left;
-	width : 45%;
+	width : 30;
 	margin : 2.5%;
 	background-color: #f5f5f5;
 	color: #bdc3c7;
@@ -117,7 +121,7 @@ footer {
 
 #gallery li a p {
 	margin: 0;
-	padding 5%;
+	padding: 5%;
 	color: #bdc3c7;
 }
 
